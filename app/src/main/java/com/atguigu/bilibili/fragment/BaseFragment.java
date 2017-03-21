@@ -69,7 +69,7 @@ public abstract class BaseFragment extends Fragment {
         startActivity(new Intent(mContext,clazz));
     }
 
-    protected abstract void initData(String jaon,String error) ;
+    protected abstract void initData(String json,String error) ;
 
     @Override
     public void onDestroyView() {

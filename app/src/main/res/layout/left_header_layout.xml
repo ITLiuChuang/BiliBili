@@ -6,7 +6,7 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <com.atguigu.mybilibili.view.CircleImageView
+    <com.atguigu.bilibili.view.CircleImageView
         android:layout_width="68dp"
         android:layout_height="68dp"
         android:layout_gravity="center_vertical"
@@ -15,7 +15,7 @@
         app:border_color="@color/white"
         app:border_width="3dp">
 
-    </com.atguigu.mybilibili.view.CircleImageView>
+    </com.atguigu.bilibili.view.CircleImageView>
 
     <TextView
         android:layout_width="wrap_content"

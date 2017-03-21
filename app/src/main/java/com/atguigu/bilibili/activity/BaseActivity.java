@@ -49,8 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void initData(String jaon,String error);
 
-    protected abstract @LayoutRes
-    int setLayoutId();
+    protected abstract @LayoutRes int setLayoutId();
 
 
     protected void startActivity(Class activityClazz){
