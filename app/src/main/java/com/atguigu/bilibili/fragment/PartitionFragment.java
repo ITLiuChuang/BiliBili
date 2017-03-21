@@ -22,7 +22,7 @@ public class PartitionFragment extends BaseFragment {
     }
 
     @Override
-    protected void initData(String jaon, String error) {
+    protected void initData(String json) {
 
     }
 }

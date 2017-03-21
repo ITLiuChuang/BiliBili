@@ -48,16 +48,16 @@ public abstract class BaseFragment extends Fragment {
             NetUtils.getInstance().okhttpUtilsget(setUrl(), new NetUtils.resultJson() {
                 @Override
                 public void onResponse(String json) {
-                    initData(json,null);
+                    initData(json);
                 }
 
                 @Override
                 public void onError(String error) {
-                    initData(null,error);
+                    initData(null);
                 }
             });
         }else{
-            initData(null,"url为空无法请求数据");
+            initData(null);
         }
 
 
@@ -69,7 +69,7 @@ public abstract class BaseFragment extends Fragment {
         startActivity(new Intent(mContext,clazz));
     }
 
-    protected abstract void initData(String json,String error) ;
+    protected abstract void initData(String json) ;
 
     @Override
     public void onDestroyView() {
