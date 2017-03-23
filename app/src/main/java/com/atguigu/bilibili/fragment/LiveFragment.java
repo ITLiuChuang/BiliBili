@@ -50,19 +50,13 @@ public class LiveFragment extends BaseFragment {
             Integer code = jsonObject.getInteger("code");
             if (code == 0) {
                 LiveBean liveBean = JSON.parseObject(json, LiveBean.class);
-                setAdapter(liveBean.getData());
+                recyclerview.setAdapter(new LiveAdapter(mContext, liveBean.getData()));
+                recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
             } else {
                 Log.e("TAG", "LiveFragment initData()联网失败");
             }
         }
     }
-
-    private void setAdapter(LiveBean.DataBean data) {
-        recyclerview.setAdapter(new LiveAdapter(mContext, data));
-        recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
-    }
-
-
 
 
     @Override

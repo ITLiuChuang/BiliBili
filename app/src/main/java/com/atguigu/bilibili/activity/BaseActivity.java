@@ -23,20 +23,20 @@ public abstract class BaseActivity extends AppCompatActivity {
         initListener();
     }
 
-    private   void initDataNet(){
-        if(TextUtils.isEmpty(setUrl())) {
-            initData(null,"url为空无法请求数据");
-           return ;
+    private void initDataNet() {
+        if (TextUtils.isEmpty(setUrl())) {
+            initData(null, "url为空无法请求数据");
+            return;
         }
         NetUtils.getInstance().okhttpUtilsget(setUrl(), new NetUtils.resultJson() {
             @Override
             public void onResponse(String json) {
-                initData(json,null);
+                initData(json, null);
             }
 
             @Override
             public void onError(String error) {
-                initData(null,error);
+                initData(null, error);
             }
         });
     }
@@ -47,14 +47,17 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void initView();
 
-    protected abstract void initData(String jaon,String error);
+    protected abstract void initData(String json, String error);
 
-    protected abstract @LayoutRes int setLayoutId();
+    protected abstract
+    @LayoutRes
+    int setLayoutId();
 
 
-    protected void startActivity(Class activityClazz){
-        startActivity(new Intent(this,activityClazz));
+    protected void startActivity(Class activityClazz) {
+        startActivity(new Intent(this, activityClazz));
     }
+
     //弹出Toast
     public void showToast(String context) {
         Toast.makeText(this, context, Toast.LENGTH_SHORT).show();

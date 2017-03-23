@@ -4,6 +4,7 @@ import com.atguigu.bilibili.R;
 
 /**
  * Created by 刘闯 on 2017/3/21.
+ * 发现
  */
 public class DiscoverFragment extends BaseFragment {
     @Override

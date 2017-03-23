@@ -1,6 +1,7 @@
 package com.atguigu.bilibili.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.activity.BannerActivity;
 import com.atguigu.bilibili.bean.LiveBean;
 import com.atguigu.bilibili.view.MyGridView;
 import com.atguigu.bilibili.viewhodler.LiveBaseViewHolder;
@@ -67,15 +69,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
     @Override
     public void onBindViewHolder(LiveBaseViewHolder holder, int position) {
-        if (getItemViewType(position) == BANNER) {
-            BannerViewHodler viewHodler = (BannerViewHodler) holder;
-            viewHodler.setData();
-        } else {
-            if (getItemViewType(position) == ENTRANCEICONS) {
-                EntranceiconsViewHodler viewHodler = (EntranceiconsViewHodler) holder;
-                viewHodler.setData();
-            }
-        }
+      holder.setData();
     }
 
     @Override
@@ -87,6 +81,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     class BannerViewHodler extends LiveBaseViewHolder {
         @Bind(R.id.banner)
         Banner banner;
+        private String link;
 
 
         public BannerViewHodler(View itemView) {
@@ -99,6 +94,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
             List<String> images = new ArrayList<>();
             for (int i = 0; i < datas.getBanner().size(); i++) {
                 images.add(datas.getBanner().get(i).getImg());
+                link = datas.getBanner().get(i).getLink();
             }
             banner.setImages(images).
                     setImageLoader(new ImageLoader() {
@@ -113,7 +109,9 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
             banner.setOnBannerClickListener(new OnBannerClickListener() {
                 @Override
                 public void OnBannerClick(int position) {
-                    Toast.makeText(mContext, "aaa", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, BannerActivity.class);
+                    intent.putExtra("img",link);
+                    mContext.startActivity(intent);
                 }
             });
 
