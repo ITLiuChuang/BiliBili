@@ -19,4 +19,8 @@ public class AppNetConfig {
      * 追番
      */
     public static final String CARTOON_TAG = "http://bangumi.bilibili.com/api/app_index_page_v4?build=3940&device=phone&mobi_app=iphone&platform=ios";
+    /**
+     * 分区
+     */
+    public static final String PARTITION_TAG = "http://app.bilibili.com/x/v2/show/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&ts=1490248769000&sign=7caf6c7efe17f2866cc1f52d1adf6347";
 }

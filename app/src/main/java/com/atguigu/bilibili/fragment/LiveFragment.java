@@ -13,7 +13,6 @@ import com.atguigu.bilibili.bean.LiveBean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by 刘闯 on 2017/3/21.
@@ -59,9 +58,5 @@ public class LiveFragment extends BaseFragment {
     }
 
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
+
 }
