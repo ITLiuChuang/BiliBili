@@ -11,10 +11,17 @@ public class AppNetConfig {
     public static final String LIVE_TAG = "http://live.bilibili.com/AppNewIndex/common?_device=android&appkey=\n" +
             "1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&scale=\n" +
             "hdpi&ts=1490013188000&sign=92541a11ed62841120e786e637b9db3b";
-
-    public static final String RECOMMEND_TAG = "http://live.bilibili.com/mobile/rooms?_device=android&appkey=\n" +
+    /**
+     * 直播推荐
+     */
+    public static final String LIVE_RECOMMEND_TAG = "http://live.bilibili.com/mobile/rooms?_device=android&appkey=\n" +
             "1d8b6e7d45233436&area_id=9&build=501000&mobi_app=android&page=\n" +
             "1&platform=android&sort=recommend&ts=1490014712000&sign=5b0bd85dc9f84381ff493283e59e8a6e";
+    /**
+     * 推荐页面
+     */
+    public static final String RECOMMEND_TAG = "http://app.bilibili.com/x/feed/index?appkey=1d8b6e7d45233436&build=501000&idx=1490344444&mobi_app=android&network=wifi&platform=android&pull=true&style=2&ts=1490344659000&sign=2882d844ffcd48d6383e231680f661fd";
+
     /**
      * 追番
      */

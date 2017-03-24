@@ -32,7 +32,7 @@ public class RecommendActivity extends BaseActivity {
 
     @Override
     protected String setUrl() {
-        return AppNetConfig.RECOMMEND_TAG;
+        return AppNetConfig.LIVE_RECOMMEND_TAG;
     }
 
     @Override
