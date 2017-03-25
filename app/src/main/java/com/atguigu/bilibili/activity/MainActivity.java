@@ -61,6 +61,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initListener() {
 
+
+
         notificationMainColumn.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -125,7 +127,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         toolBar.inflateMenu(R.menu.menu_toolbar);
-
     }
 
     @Override

@@ -23,7 +23,8 @@
             android:launchMode="singleTask" />
         <activity android:name=".activity.RecommendActivity" />
         <activity android:name=".activity.BannerActivity" />
-        <activity android:name=".activity.HuaTiActivity"></activity>
+        <activity android:name=".activity.HuaTiActivity" />
+        <activity android:name=".activity.YuanChuangActivity"></activity>
     </application>
 
 </manifest>

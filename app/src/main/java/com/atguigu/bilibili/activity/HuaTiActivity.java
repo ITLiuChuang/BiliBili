@@ -1,10 +1,12 @@
 package com.atguigu.bilibili.activity;
 
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -22,6 +24,9 @@ public class HuaTiActivity extends BaseActivity {
     ListView lvHome;
     @Bind(R.id.iv_back)
     ImageView ivBack;
+    @Bind(R.id.tv_title)
+    TextView tvTitle;
+
 
     @Override
     protected String setUrl() {
@@ -53,6 +58,9 @@ public class HuaTiActivity extends BaseActivity {
             if (code == 0) {
                 HuaTiBean huaTiBean = JSON.parseObject(json, HuaTiBean.class);
                 lvHome.setAdapter(new HuaTiAdapter(HuaTiActivity.this, huaTiBean.getList()));
+                Intent intent = getIntent();
+                String name = intent.getStringExtra("name");
+                tvTitle.setText(name);
             }
         }
     }
@@ -61,7 +69,6 @@ public class HuaTiActivity extends BaseActivity {
     protected int setLayoutId() {
         return R.layout.activity_hua_ti;
     }
-
 
 
 }

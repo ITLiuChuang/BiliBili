@@ -69,7 +69,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
     @Override
     public void onBindViewHolder(LiveBaseViewHolder holder, int position) {
-      holder.setData();
+        holder.setData();
     }
 
     @Override
@@ -81,7 +81,6 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     class BannerViewHodler extends LiveBaseViewHolder {
         @Bind(R.id.banner)
         Banner banner;
-        private String link;
 
 
         public BannerViewHodler(View itemView) {
@@ -94,7 +93,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
             List<String> images = new ArrayList<>();
             for (int i = 0; i < datas.getBanner().size(); i++) {
                 images.add(datas.getBanner().get(i).getImg());
-                link = datas.getBanner().get(i).getLink();
+
             }
             banner.setImages(images).
                     setImageLoader(new ImageLoader() {
@@ -110,7 +109,8 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
                 @Override
                 public void OnBannerClick(int position) {
                     Intent intent = new Intent(mContext, BannerActivity.class);
-                    intent.putExtra("img",link);
+                    String link = datas.getBanner().get(position-1).getLink();
+                    intent.putExtra("img",link );
                     mContext.startActivity(intent);
                 }
             });

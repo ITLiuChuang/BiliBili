@@ -2,7 +2,6 @@ package com.atguigu.bilibili.activity;
 
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -47,7 +46,6 @@ public class BannerActivity extends BaseActivity {
     protected void initView() {
         Intent intent = this.getIntent();
         String img = intent.getStringExtra("img");
-        Log.e("TAG", "img" + img);
         WebSettings settings = webview.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setBuiltInZoomControls(true);

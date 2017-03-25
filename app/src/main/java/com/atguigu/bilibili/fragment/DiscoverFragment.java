@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.activity.HuaTiActivity;
+import com.atguigu.bilibili.activity.YuanChuangActivity;
 import com.atguigu.bilibili.bean.Discoverbean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -23,6 +24,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.atguigu.bilibili.R.id.tv_xingququan;
+
 /**
  * Created by 刘闯 on 2017/3/21.
  * 发现
@@ -32,7 +35,7 @@ public class DiscoverFragment extends BaseFragment {
 
     @Bind(R.id.ivest_hot_fl)
     TagFlowLayout ivestHotFl;
-    @Bind(R.id.tv_xingququan)
+    @Bind(tv_xingququan)
     TextView tvXingququan;
     @Bind(R.id.tv_huatizhongxin)
     TextView tvHuatizhongxin;
@@ -152,18 +155,25 @@ public class DiscoverFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu})
+    @OnClick({tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_xingququan:
+            case tv_xingququan:
                 break;
             case R.id.tv_huatizhongxin:
                 Intent intent = new Intent(mContext, HuaTiActivity.class);
+                intent.putExtra("name", tvHuatizhongxin.getText().toString());
                 startActivity(intent);
                 break;
             case R.id.tv_huodongzhongxin:
+                intent = new Intent(mContext, HuaTiActivity.class);
+                intent.putExtra("name", tvHuodongzhongxin.getText().toString());
+                startActivity(intent);
                 break;
             case R.id.tv_yuanchuang:
+                intent = new Intent(mContext,YuanChuangActivity.class);
+                intent.putExtra("name", tvYuanchuang.getText().toString());
+                startActivity(intent);
                 break;
             case R.id.tv_quanqu:
                 break;

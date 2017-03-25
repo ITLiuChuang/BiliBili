@@ -1,13 +1,16 @@
 package com.atguigu.bilibili.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.activity.BannerActivity;
 import com.atguigu.bilibili.activity.HuaTiActivity;
 import com.atguigu.bilibili.bean.HuaTiBean;
 import com.bumptech.glide.Glide;
@@ -45,17 +48,26 @@ public class HuaTiAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
             convertView = View.inflate(mContext, R.layout.item_huati, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tvTitle.setText(datas.get(position).getTitle());
         Glide.with(mContext).load(datas.get(position).getCover()).into(viewHolder.ivImg);
+
+        viewHolder.llHuati.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, BannerActivity.class);
+                intent.putExtra("img",datas.get(position).getLink());
+                mContext.startActivity(intent);
+            }
+        });
         return convertView;
     }
 
@@ -66,9 +78,12 @@ public class HuaTiAdapter extends BaseAdapter {
         TextView tvTitle;
         @Bind(R.id.item_live_layout)
         CardView itemLiveLayout;
-
+        @Bind(R.id.ll_huati)
+        LinearLayout llHuati;
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }
     }
+
+
 }

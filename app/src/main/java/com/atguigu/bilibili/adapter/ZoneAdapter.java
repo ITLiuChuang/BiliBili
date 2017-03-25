@@ -27,6 +27,7 @@ public class ZoneAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     private final LayoutInflater inflater;
 
 
+
     private String[] name = new String[]{"直播", "番剧", "动画", "国创"
             , "音乐", "舞蹈", "游戏", "科技", "生活", "鬼畜"
             , "时尚", "广告", "娱乐", "电影", "电视剧", "游戏中心"};
@@ -59,8 +60,8 @@ public class ZoneAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     public LiveBaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == CHANNEL) {
             return new ChannelViewHolder(View.inflate(mContext, R.layout.item_zone_channe, null));
-     } else if (viewType == DRAG) {
-           return new DragViewHolder(View.inflate(mContext, R.layout.item_zone_drag, null));
+        } else if (viewType == DRAG) {
+            return new DragViewHolder(View.inflate(mContext, R.layout.item_zone_drag, null));
         }
         return null;
     }
@@ -86,7 +87,7 @@ public class ZoneAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         @Override
         public void setData() {
-            gvChannel.setAdapter(new ChanneAdapter(mContext,name,id));
+            gvChannel.setAdapter(new ChanneAdapter(mContext, name, id));
         }
     }
 
@@ -96,12 +97,12 @@ public class ZoneAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         public DragViewHolder(View inflate) {
             super(inflate);
-            ButterKnife.bind(this,inflate);
+            ButterKnife.bind(this, inflate);
         }
 
         @Override
         public void setData() {
-            gvHot.setAdapter(new DragAdater(mContext, datas,name,id));
+            gvHot.setAdapter(new DragAdater(mContext, datas, name, id));
 
         }
     }
