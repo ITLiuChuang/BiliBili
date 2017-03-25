@@ -1,12 +1,10 @@
 package com.atguigu.bilibili.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +12,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.activity.HuaTiActivity;
 import com.atguigu.bilibili.bean.Discoverbean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -159,6 +158,8 @@ public class DiscoverFragment extends BaseFragment {
             case R.id.tv_xingququan:
                 break;
             case R.id.tv_huatizhongxin:
+                Intent intent = new Intent(mContext, HuaTiActivity.class);
+                startActivity(intent);
                 break;
             case R.id.tv_huodongzhongxin:
                 break;
@@ -169,11 +170,5 @@ public class DiscoverFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
+
 }

@@ -63,7 +63,7 @@ public class RecommendActivity extends BaseActivity {
             Integer code = jsonObject.getInteger("code");
             if (code == 0) {
                 RecommendBean recommendBean = JSON.parseObject(json, RecommendBean.class);
-                RecommendAdapter recommendAdapter = new RecommendAdapter(RecommendActivity.this, recommendBean.getData());
+                RecommendAdapter recommendAdapter = new RecommendAdapter(this, recommendBean.getData());
                 recyclerview.setAdapter(recommendAdapter);
                 recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
