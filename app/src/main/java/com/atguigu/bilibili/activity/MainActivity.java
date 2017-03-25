@@ -1,5 +1,6 @@
 package com.atguigu.bilibili.activity;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
@@ -59,6 +60,49 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initListener() {
+
+        notificationMainColumn.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        drawerlayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.vip:
+                        showToast("我的大会员");
+                        break;
+                    case R.id.integral:
+
+                        break;
+                    case R.id.cache:
+
+                        break;
+                    case R.id.review:
+
+                        break;
+                    case R.id.collect:
+
+                        break;
+                    case R.id.history:
+
+                        break;
+                    case R.id.attention:
+
+                        break;
+                    case R.id.wallet:
+
+                        break;
+                    case R.id.select:
+
+                        break;
+                    case R.id.setting:
+
+                        break;
+                }
+                return true;
+            }
+        });
+
         toolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -178,4 +222,5 @@ public class MainActivity extends BaseActivity {
             drawerlayout.openDrawer(GravityCompat.START);
         }
     }
+
 }

@@ -49,7 +49,7 @@ public class CartoonFragment extends BaseFragment {
                 CartoonBean cartoonBean = JSON.parseObject(json, CartoonBean.class);
                 BannerBean bannerBean = JSON.parseObject(json, BannerBean.class);
 
-                recyclerview.setAdapter(new CartoonAdapter(mContext, cartoonBean.getResult(), bannerBean.getResult()));
+                recyclerview.setAdapter(new CartoonAdapter(mContext,cartoonBean.getResult(),bannerBean.getResult()));
                 recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
             } else {
                 Log.e("TAG", "LiveFragment initData()联网失败");
@@ -61,3 +61,4 @@ public class CartoonFragment extends BaseFragment {
 
 
 }
+

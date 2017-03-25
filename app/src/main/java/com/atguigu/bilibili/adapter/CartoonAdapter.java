@@ -29,20 +29,22 @@ import butterknife.ButterKnife;
  */
 public class CartoonAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     private final Context mContext;
-    private final CartoonBean.ResultBean datas;
-    private final List<BannerBean.ResultBean> bannerData;
+
     private final LayoutInflater inflater;
     private static final int LANDING = 0;
     private static final int SERIALIZ = 1;
-
+    private final CartoonBean.ResultBean datas;
+    private final List<BannerBean.ResultBean> bannerDatas;
 
     public CartoonAdapter(Context mContext, CartoonBean.ResultBean result, List<BannerBean.ResultBean> result1) {
         this.mContext = mContext;
         this.datas = result;
-        this.bannerData = result1;
+        this.bannerDatas = result1;
         inflater = LayoutInflater.from(mContext);
-
     }
+
+
+
 
     @Override
     public int getItemViewType(int position) {
@@ -110,14 +112,13 @@ public class CartoonAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
         public void setData() {
             gvHot.setAdapter(new SerializAdapter(mContext, datas.getSerializing()));
             List<String> images = new ArrayList<>();
-            for (int i = 0; i < bannerData.size(); i++) {
-                images.add(bannerData.get(i).getCover());
+            for (int i = 0; i < bannerDatas.size(); i++) {
+                images.add(bannerDatas.get(i).getCover());
             }
 
             banner.setImages(images).setImageLoader(new ImageLoader() {
                 @Override
                 public void displayImage(Context context, Object path, ImageView imageView) {
-
                     Glide.with(mContext).load(path).into(imageView);
                 }
             });

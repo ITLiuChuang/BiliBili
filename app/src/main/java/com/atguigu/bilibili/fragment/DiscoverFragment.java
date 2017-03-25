@@ -1,9 +1,13 @@
 package com.atguigu.bilibili.fragment;
 
 import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,12 +43,36 @@ public class DiscoverFragment extends BaseFragment {
     TextView tvYuanchuang;
     @Bind(R.id.tv_quanqu)
     TextView tvQuanqu;
+    @Bind(R.id.ivest_hot_f2)
+    TagFlowLayout ivestHotF2;
+    @Bind(R.id.jiazai)
+    TextView jiazai;
+
+    @Bind(R.id.shouqi)
+    TextView shouqi;
+    @Bind(R.id.ll_shouqi)
+    LinearLayout llShouqi;
+    @Bind(R.id.ll_jiazai)
+    LinearLayout llJiazai;
     private Discoverbean discoverbean;
     private String[] datas;
 
     @Override
     protected void initListener() {
-
+        llJiazai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llShouqi.setVisibility(View.VISIBLE);
+                llJiazai.setVisibility(View.GONE);
+            }
+        });
+        llShouqi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llShouqi.setVisibility(View.GONE);
+                llJiazai.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
@@ -75,7 +103,27 @@ public class DiscoverFragment extends BaseFragment {
                 Log.e("TAG", "LiveFragment initData()联网失败");
             }
         }
+
         ivestHotFl.setAdapter(new TagAdapter<String>(datas) {
+
+            @Override
+            public View getView(FlowLayout parent, int position, String s) {
+                final TextView textView = new TextView(getActivity());
+                textView.setText(s);
+                //设置shape
+                textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.hot_shape));
+                //获取shapeDrawable
+                GradientDrawable background = (GradientDrawable) textView.getBackground();
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getActivity(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                return textView;
+            }
+        });
+        ivestHotF2.setAdapter(new TagAdapter<String>(datas) {
 
             @Override
             public View getView(FlowLayout parent, int position, String s) {
@@ -119,5 +167,13 @@ public class DiscoverFragment extends BaseFragment {
             case R.id.tv_quanqu:
                 break;
         }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
     }
 }

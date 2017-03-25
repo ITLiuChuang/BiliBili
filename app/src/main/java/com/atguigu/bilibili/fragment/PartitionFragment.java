@@ -39,7 +39,7 @@ public class PartitionFragment extends BaseFragment {
     @Override
     protected void initData(String json) {
         if(TextUtils.isEmpty(json)) {
-            Log.e("TAG", "json==null");
+
         }else{
             JSONObject jsonObject = JSON.parseObject(json);
             int code = jsonObject.getInteger("code");
