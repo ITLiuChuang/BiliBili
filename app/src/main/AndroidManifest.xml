@@ -24,7 +24,8 @@
         <activity android:name=".activity.RecommendActivity" />
         <activity android:name=".activity.BannerActivity" />
         <activity android:name=".activity.HuaTiActivity" />
-        <activity android:name=".activity.YuanChuangActivity"></activity>
+        <activity android:name=".activity.YuanChuangActivity" />
+        <activity android:name=".activity.SearchActivity"></activity>
     </application>
 
 </manifest>

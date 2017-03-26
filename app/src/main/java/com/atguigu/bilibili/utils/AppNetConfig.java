@@ -38,6 +38,11 @@ public class AppNetConfig {
      */
     public static final String DISCOVER_TAG = "http://app.bilibili.com/x/v2/search/hot?appkey=1d8b6e7d45233436&build=501000&limit=50&mobi_app=android&platform=android&ts=1490014710000&sign=e5ddf94fa9a0d6876cb85756c37c4adc";
     /**
+     * 所搜
+     */
+    public static final String SOU_TAG = "http://app.bilibili.com/x/v2/search?appkey=1d8b6e7d45233436&build=501000&duration=0&keyword=";
+    public static final String SUO_TAG = "&mobi_app=android&platform=android&pn=1&ps=20";
+    /**
      * 话题中心
      */
     public static final String HUATI_TAG = "http://api.bilibili.com/topic/getlist?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&page=1&pageSize=20&platform=android&ts=1490015740000&sign=be68382cdc99c168ef87f2fa423dd280";

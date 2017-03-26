@@ -7,12 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.activity.HuaTiActivity;
+import com.atguigu.bilibili.activity.SearchActivity;
 import com.atguigu.bilibili.activity.YuanChuangActivity;
 import com.atguigu.bilibili.bean.Discoverbean;
 import com.atguigu.bilibili.utils.AppNetConfig;
@@ -119,7 +119,9 @@ public class DiscoverFragment extends BaseFragment {
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getActivity(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), SearchActivity.class);
+                        intent.putExtra("name",textView.getText().toString());
+                        startActivity(intent);
                     }
                 });
                 return textView;
@@ -138,7 +140,9 @@ public class DiscoverFragment extends BaseFragment {
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getActivity(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), SearchActivity.class);
+                        intent.putExtra("name",textView.getText().toString());
+                        startActivity(intent);
                     }
                 });
                 return textView;
@@ -171,7 +175,7 @@ public class DiscoverFragment extends BaseFragment {
                 startActivity(intent);
                 break;
             case R.id.tv_yuanchuang:
-                intent = new Intent(mContext,YuanChuangActivity.class);
+                intent = new Intent(mContext, YuanChuangActivity.class);
                 intent.putExtra("name", tvYuanchuang.getText().toString());
                 startActivity(intent);
                 break;

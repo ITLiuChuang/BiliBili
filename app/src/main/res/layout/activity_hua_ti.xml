@@ -13,12 +13,12 @@
         android:background="#FB7299"
         android:orientation="horizontal">
 
-        <ImageView
+        <Button
             android:id="@+id/iv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+            android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
 
         <TextView
             android:id="@+id/tv_title"

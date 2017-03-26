@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,10 +22,11 @@ public class HuaTiActivity extends BaseActivity {
 
     @Bind(R.id.lv_home)
     ListView lvHome;
-    @Bind(R.id.iv_back)
-    ImageView ivBack;
+
     @Bind(R.id.tv_title)
     TextView tvTitle;
+    @Bind(R.id.iv_back)
+    Button ivBack;
 
 
     @Override

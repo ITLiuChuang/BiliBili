@@ -25,7 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:maxLines="2"
-                android:text="被封禁四十年后 这部漫画终于重见天日《阿修罗》" />
+                android:text="被封禁四十年后 这部漫画终于重见天日《阿修罗》"
+                android:textColor="#000" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
