@@ -16,6 +16,8 @@ import com.atguigu.bilibili.activity.SearchActivity;
 import com.atguigu.bilibili.activity.YuanChuangActivity;
 import com.atguigu.bilibili.bean.Discoverbean;
 import com.atguigu.bilibili.utils.AppNetConfig;
+import com.wyt.searchbox.SearchFragment;
+import com.wyt.searchbox.custom.IOnSearchClickListener;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -56,6 +58,8 @@ public class DiscoverFragment extends BaseFragment {
     LinearLayout llShouqi;
     @Bind(R.id.ll_jiazai)
     LinearLayout llJiazai;
+    @Bind(R.id.tv_search)
+    TextView tvSearch;
     private Discoverbean discoverbean;
     private String[] datas;
 
@@ -75,6 +79,27 @@ public class DiscoverFragment extends BaseFragment {
                 llJiazai.setVisibility(View.VISIBLE);
             }
         });
+
+        tvSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchFragment searchFragment = SearchFragment.newInstance();
+                searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
+                    @Override
+                    public void OnSearchClick(String keyword) {
+                        Intent intent = new Intent(getActivity(), SearchActivity.class);
+                        intent.putExtra("name", keyword);
+                        startActivity(intent);
+
+                    }
+
+                });
+                searchFragment.show(getFragmentManager(), SearchFragment.TAG);
+            }
+
+        });
+
+
     }
 
     @Override
@@ -120,7 +145,7 @@ public class DiscoverFragment extends BaseFragment {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), SearchActivity.class);
-                        intent.putExtra("name",textView.getText().toString());
+                        intent.putExtra("name", textView.getText().toString());
                         startActivity(intent);
                     }
                 });
@@ -141,7 +166,7 @@ public class DiscoverFragment extends BaseFragment {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), SearchActivity.class);
-                        intent.putExtra("name",textView.getText().toString());
+                        intent.putExtra("name", textView.getText().toString());
                         startActivity(intent);
                     }
                 });
@@ -183,6 +208,8 @@ public class DiscoverFragment extends BaseFragment {
                 break;
         }
     }
+
+
 
 
 }

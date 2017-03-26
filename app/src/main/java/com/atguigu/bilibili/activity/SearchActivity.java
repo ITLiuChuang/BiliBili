@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.adapter.SearchAdapter;
@@ -34,12 +35,12 @@ public class SearchActivity extends BaseActivity {
     LinearLayout activitySearch;
     @Bind(R.id.iv_back)
     ImageView ivBack;
+    @Bind(R.id.tv_name)
+    TextView tvName;
     private ArrayList<Fragment> fragments;
 
     @Override
     protected String setUrl() {
-
-
         return null;
     }
 
@@ -57,16 +58,18 @@ public class SearchActivity extends BaseActivity {
     @Override
     protected void initView() {
 
+
     }
 
     @Override
     protected void initData(String json, String error) {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
+        tvName.setText(name);
 
 
         fragments = new ArrayList<>();
-        fragments.add(new ZongHeFragment(this, name));
+        fragments.add(new ZongHeFragment(this,name));
         fragments.add(new FanFragment());
         fragments.add(new UPFragment());
         fragments.add(new YingShiFragment());
@@ -80,6 +83,7 @@ public class SearchActivity extends BaseActivity {
     protected int setLayoutId() {
         return R.layout.activity_search;
     }
+
 
 
 }
