@@ -30,6 +30,8 @@ public class ZongHeFragment extends BaseFragment {
         this.name = name;
     }
 
+
+
     @Override
     protected void initListener() {
 
@@ -48,6 +50,7 @@ public class ZongHeFragment extends BaseFragment {
 
     @Override
     protected void initData(String json) {
+
         if (TextUtils.isEmpty(json)) {
             Log.e("TAG", "LiveFragment initData()");
         } else {
@@ -62,7 +65,6 @@ public class ZongHeFragment extends BaseFragment {
             }
         }
     }
-
 
 
 }

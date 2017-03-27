@@ -67,9 +67,8 @@ public class SearchActivity extends BaseActivity {
         String name = intent.getStringExtra("name");
         tvName.setText(name);
 
-
         fragments = new ArrayList<>();
-        fragments.add(new ZongHeFragment(this,name));
+        fragments.add(new ZongHeFragment(this, name));
         fragments.add(new FanFragment());
         fragments.add(new UPFragment());
         fragments.add(new YingShiFragment());
@@ -83,7 +82,6 @@ public class SearchActivity extends BaseActivity {
     protected int setLayoutId() {
         return R.layout.activity_search;
     }
-
 
 
 }

@@ -11,7 +11,8 @@ import java.util.ArrayList;
  */
 public class SearchAdapter extends FragmentPagerAdapter {
     private final ArrayList<Fragment> fragments;
-    String[] titles = {"综合",  "番剧","UP主","影视"};
+    String[] titles = {"综合", "番剧", "UP主", "影视"};
+
 
     public SearchAdapter(FragmentManager supportFragmentManager, ArrayList<Fragment> fragments) {
         super(supportFragmentManager);
@@ -21,6 +22,7 @@ public class SearchAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         return titles[position];
     }
 
