@@ -19,7 +19,7 @@ import butterknife.Bind;
  * <p>
  * 直播页面
  */
-public class LiveFragment extends BaseFragment {
+public class  LiveFragment extends BaseFragment {
 
 
     @Bind(R.id.recyclerview)

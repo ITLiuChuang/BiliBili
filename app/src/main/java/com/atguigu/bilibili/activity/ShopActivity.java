@@ -1,6 +1,5 @@
 package com.atguigu.bilibili.activity;
 
-
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.widget.Toolbar;
@@ -18,17 +17,17 @@ import com.atguigu.bilibili.R;
 import butterknife.Bind;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
-public class BannerActivity extends BaseActivity {
+public class ShopActivity extends BaseActivity {
 
 
     @Bind(R.id.iv_back)
     ImageView ivBack;
-    @Bind(R.id.tv_recommend_area)
-    TextView tvRecommendArea;
-    @Bind(R.id.iv_img)
-    WebView webview;
+    @Bind(R.id.tv_name)
+    TextView tvName;
     @Bind(R.id.toolBar)
     Toolbar toolBar;
+    @Bind(R.id.iv_img)
+    WebView ivImg;
 
 
     @Override
@@ -38,7 +37,6 @@ public class BannerActivity extends BaseActivity {
 
     @Override
     protected void initListener() {
-
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,8 +78,8 @@ public class BannerActivity extends BaseActivity {
                     oks.setSiteUrl("http://sharesdk.cn");
 
                     // 启动分享GUI
-                    oks.show(BannerActivity.this);
-                }else if(itemId == R.id.liulanqi) {
+                    oks.show(ShopActivity.this);
+                } else if (itemId == R.id.liulanqi) {
 
                 }
                 return true;
@@ -92,13 +90,14 @@ public class BannerActivity extends BaseActivity {
     @Override
     protected void initView() {
         toolBar.inflateMenu(R.menu.menu_share);
+
         Intent intent = this.getIntent();
         String img = intent.getStringExtra("img");
-        WebSettings settings = webview.getSettings();
+        WebSettings settings = ivImg.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setBuiltInZoomControls(true);
         settings.setUseWideViewPort(true);
-        webview.setWebViewClient(new WebViewClient() {
+        ivImg.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
@@ -119,8 +118,7 @@ public class BannerActivity extends BaseActivity {
                 return true;
             }
         });
-        webview.loadUrl(img);
-
+        ivImg.loadUrl(img);
     }
 
     @Override
@@ -130,7 +128,8 @@ public class BannerActivity extends BaseActivity {
 
     @Override
     protected int setLayoutId() {
-        return R.layout.activity_banner;
+        return R.layout.activity_shop;
+
     }
 
 

@@ -29,7 +29,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = View.inflate(mContext,setLayoutId(),null);
+        View view = View.inflate(mContext, setLayoutId(), null);
         ButterKnife.bind(this, view);
         initListener();
         return view;
@@ -37,14 +37,15 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initListener();
 
-    protected abstract @LayoutRes
+    protected abstract
+    @LayoutRes
     int setLayoutId();
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if(!TextUtils.isEmpty(setUrl())) {
+        if (!TextUtils.isEmpty(setUrl())) {
             NetUtils.getInstance().okhttpUtilsget(setUrl(), new NetUtils.resultJson() {
                 @Override
                 public void onResponse(String json) {
@@ -56,7 +57,7 @@ public abstract class BaseFragment extends Fragment {
                     initData(null);
                 }
             });
-        }else{
+        } else {
             initData(null);
         }
 
@@ -66,10 +67,10 @@ public abstract class BaseFragment extends Fragment {
     protected abstract String setUrl();
 
     public void startActivity(Class clazz) {
-        startActivity(new Intent(mContext,clazz));
+        startActivity(new Intent(mContext, clazz));
     }
 
-    protected abstract void initData(String json) ;
+    protected abstract void initData(String json);
 
     @Override
     public void onDestroyView() {

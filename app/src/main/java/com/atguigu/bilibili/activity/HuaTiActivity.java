@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.adapter.HuaTiAdapter;
-import com.atguigu.bilibili.bean.HuaTiBean;
+import com.atguigu.bilibili.bean.HuoDongBean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 
 import butterknife.Bind;
@@ -27,11 +27,12 @@ public class HuaTiActivity extends BaseActivity {
     TextView tvTitle;
     @Bind(R.id.iv_back)
     Button ivBack;
+    private String name;
 
 
     @Override
     protected String setUrl() {
-        return AppNetConfig.HUATI_TAG;
+        return AppNetConfig.HUODONG_TAG;
     }
 
     @Override
@@ -46,6 +47,9 @@ public class HuaTiActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+
 
     }
 
@@ -57,10 +61,11 @@ public class HuaTiActivity extends BaseActivity {
             JSONObject jsonObject = JSON.parseObject(json);
             Integer code = jsonObject.getInteger("code");
             if (code == 0) {
-                HuaTiBean huaTiBean = JSON.parseObject(json, HuaTiBean.class);
-                lvHome.setAdapter(new HuaTiAdapter(HuaTiActivity.this, huaTiBean.getList()));
-                Intent intent = getIntent();
-                String name = intent.getStringExtra("name");
+
+                HuoDongBean huoDongBean = JSON.parseObject(json, HuoDongBean.class);
+                lvHome.setAdapter(new HuaTiAdapter(HuaTiActivity.this, huoDongBean.getList()));
+
+
                 tvTitle.setText(name);
             }
         }

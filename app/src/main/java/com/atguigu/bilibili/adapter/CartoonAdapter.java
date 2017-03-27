@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
-import com.atguigu.bilibili.bean.BannerBean;
 import com.atguigu.bilibili.bean.CartoonBean;
 import com.atguigu.bilibili.view.MyGridView;
 import com.atguigu.bilibili.viewhodler.LiveBaseViewHolder;
@@ -34,12 +33,12 @@ public class CartoonAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     private static final int LANDING = 0;
     private static final int SERIALIZ = 1;
     private final CartoonBean.ResultBean datas;
-    private final List<BannerBean.ResultBean> bannerDatas;
 
-    public CartoonAdapter(Context mContext, CartoonBean.ResultBean result, List<BannerBean.ResultBean> result1) {
+
+    public CartoonAdapter(Context mContext, CartoonBean.ResultBean result) {
         this.mContext = mContext;
         this.datas = result;
-        this.bannerDatas = result1;
+
         inflater = LayoutInflater.from(mContext);
     }
 
@@ -112,8 +111,8 @@ public class CartoonAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
         public void setData() {
             gvHot.setAdapter(new SerializAdapter(mContext, datas.getSerializing()));
             List<String> images = new ArrayList<>();
-            for (int i = 0; i < bannerDatas.size(); i++) {
-                images.add(bannerDatas.get(i).getCover());
+            for (int i = 0; i < datas.getAd().getHead().size(); i++) {
+                images.add(datas.getAd().getHead().get(i).getImg());
             }
 
             banner.setImages(images).setImageLoader(new ImageLoader() {

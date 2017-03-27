@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.activity.HuaTiActivity;
 import com.atguigu.bilibili.activity.SearchActivity;
+import com.atguigu.bilibili.activity.ShopActivity;
 import com.atguigu.bilibili.activity.YuanChuangActivity;
 import com.atguigu.bilibili.bean.Discoverbean;
 import com.atguigu.bilibili.utils.AppNetConfig;
@@ -37,8 +38,7 @@ public class DiscoverFragment extends BaseFragment {
 
     @Bind(R.id.ivest_hot_fl)
     TagFlowLayout ivestHotFl;
-    @Bind(tv_xingququan)
-    TextView tvXingququan;
+
     @Bind(R.id.tv_huatizhongxin)
     TextView tvHuatizhongxin;
     @Bind(R.id.tv_huodongzhongxin)
@@ -60,8 +60,13 @@ public class DiscoverFragment extends BaseFragment {
     LinearLayout llJiazai;
     @Bind(R.id.tv_search)
     TextView tvSearch;
+    @Bind(R.id.tv_xingququan)
+    TextView tvXingququan;
+    @Bind(R.id.ll_shop)
+    LinearLayout llShop;
     private Discoverbean discoverbean;
     private String[] datas;
+
 
     @Override
     protected void initListener() {
@@ -184,7 +189,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
 
-    @OnClick({tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu})
+    @OnClick({tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu, R.id.ll_shop})
     public void onClick(View view) {
         switch (view.getId()) {
             case tv_xingququan:
@@ -206,10 +211,13 @@ public class DiscoverFragment extends BaseFragment {
                 break;
             case R.id.tv_quanqu:
                 break;
+            case R.id.ll_shop:
+                intent = new Intent(mContext, ShopActivity.class);
+                intent.putExtra("img","http://bmall.bilibili.com/#!/" );
+                startActivity(intent);
+                break;
         }
     }
-
-
 
 
 }

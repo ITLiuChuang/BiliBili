@@ -9,7 +9,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.adapter.CartoonAdapter;
-import com.atguigu.bilibili.bean.BannerBean;
 import com.atguigu.bilibili.bean.CartoonBean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 
@@ -47,9 +46,9 @@ public class CartoonFragment extends BaseFragment {
             Integer code = jsonObject.getInteger("code");
             if (code == 0) {
                 CartoonBean cartoonBean = JSON.parseObject(json, CartoonBean.class);
-                BannerBean bannerBean = JSON.parseObject(json, BannerBean.class);
 
-                recyclerview.setAdapter(new CartoonAdapter(mContext,cartoonBean.getResult(),bannerBean.getResult()));
+
+                recyclerview.setAdapter(new CartoonAdapter(mContext,cartoonBean.getResult()));
                 recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
             } else {
                 Log.e("TAG", "LiveFragment initData()联网失败");

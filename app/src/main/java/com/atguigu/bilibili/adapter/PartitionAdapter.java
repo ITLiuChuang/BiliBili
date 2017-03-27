@@ -1,6 +1,7 @@
 package com.atguigu.bilibili.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.activity.DirectSeedingActivity;
 import com.atguigu.bilibili.bean.LiveBean;
 import com.bumptech.glide.Glide;
 
@@ -59,6 +61,14 @@ public class PartitionAdapter extends BaseAdapter {
         viewHolder.tvName.setText(livesBean.getOwner().getName());
         viewHolder.tvFollow.setText(livesBean.getOnline()+"");
         Glide.with(mContext).load(livesBean.getCover().getSrc()).into(viewHolder.ivHot);
+        
+        viewHolder.itemLiveLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DirectSeedingActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
         return convertView;
     }
 

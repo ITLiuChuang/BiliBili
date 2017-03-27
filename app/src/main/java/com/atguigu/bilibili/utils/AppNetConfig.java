@@ -26,10 +26,6 @@ public class AppNetConfig {
      */
     public static final String CARTOON_TAG = "http://bangumi.bilibili.com/api/app_index_page_v4?build=3940&device=phone&mobi_app=iphone&platform=ios";
     /**
-     * 追番banner
-     */
-    public static final String BANNER_TAG = "http://bangumi.bilibili.com/api/bangumi_recommend?access_key=f5bd4e793b82fba5aaf5b91fb549910a&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3470&cursor=0&device=phone&mobi_app=iphone&pagesize=10&platform=ios&sign=56329a5709c401d4d7c0237f64f7943f&ts=1469613558";
-    /**
      * 分区
      */
     public static final String PARTITION_TAG = "http://app.bilibili.com/x/v2/show/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&ts=1490248769000&sign=7caf6c7efe17f2866cc1f52d1adf6347";
@@ -49,7 +45,7 @@ public class AppNetConfig {
     /**
      * 活动中心
      */
-    public static final String HUODONG_TAG = "http://api.bilibili.com/topic/getlist?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&page=1&pageSize=20&platform=android&ts=1490015740000&sign=be68382cdc99c168ef87f2fa423dd280";
+    public static final String HUODONG_TAG = "http://api.bilibili.com/event/getlist?access_key=a02590621e65e8a89a5c2d773a6153f8&appkey=1d8b6e7d45233436&build=501000&mobi_app=android&page=1&pageSize=20&platform=android&ts=1490612726000&sign=3dbcbc2b25e93a9d1b5c9d24497e43d1";
     /**
      * 原创排行榜
      */

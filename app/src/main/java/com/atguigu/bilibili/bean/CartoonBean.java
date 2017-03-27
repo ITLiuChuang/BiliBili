@@ -11,7 +11,7 @@ public class CartoonBean {
     /**
      * code : 0
      * message : success
-     * result : {"ad":{"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/102d534a0d843d16a476d67d5cbfc01d32b062a6.jpg","link":"http://bangumi.bilibili.com/anime/5795","pub_time":"2017-03-21 22:30:00","title":"ACCA"},{"desc":".","id":0,"img":"http://i0.hdslb.com/bfs/bangumi/150986f04c4135793981c60e3c212655d9bed321.jpg","link":"http://bangumi.bilibili.com/anime/5809","pub_time":"2017-03-22 03:30:00","title":"黑白来看守所"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/87ce44fc1c2897c4b849f6ca1a0323877c6bbfb7.jpg","link":"http://bangumi.bilibili.com/anime/5796","pub_time":"2017-03-22 01:35:00","title":"兽娘动物园"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/1ab9b2aaf7c4c6c9b0d62dfb6330353223cb4e66.jpg","link":"http://bangumi.bilibili.com/anime/5797","pub_time":"2017-03-22 01:00:00","title":"hand shakers"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/32c2d7f952cede66b2c7083924b1c6130fd26530.jpg","link":"http://bangumi.bilibili.com/anime/1299","pub_time":"2017-03-20 15:17:00","title":"彩云国物语"}]},"previous":{"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1673758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1331766","is_finish":0,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"786194","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016},"serializing":[{"cover":"http://i0.hdslb.com/bfs/bangumi/4d06e660b8da9cb5335552f4ebde89bbcb2e9d4f.jpg","favourites":"1402598","is_finish":0,"is_started":1,"last_time":1490178302,"newest_ep_index":"49","pub_time":1459872000,"season_id":3462,"season_status":2,"title":"双星之阴阳师","watching_count":5896},{"cover":"http://i0.hdslb.com/bfs/bangumi/0e6bce5d018796dda7782aa5c97bfdd14691348a.jpg","favourites":"149350","is_finish":0,"is_started":1,"last_time":1490161452,"newest_ep_index":"蒯越篇","pub_time":1412006400,"season_id":2647,"season_status":2,"title":"口水三国","watching_count":670},{"cover":"http://i0.hdslb.com/bfs/bangumi/a910b6d56c06a1c4525ed1df30464fcf1dae0bf5.jpg","favourites":"244276","is_finish":0,"is_started":1,"last_time":1490155322,"newest_ep_index":"16","pub_time":1481083200,"season_id":5748,"season_status":2,"title":"画江湖之杯莫停","watching_count":1681},{"cover":"http://i0.hdslb.com/bfs/bangumi/0ab129325044ff4acbf808a3e38b71a1e0ea5b57.jpg","favourites":"478917","is_finish":0,"is_started":1,"last_time":1490124603,"newest_ep_index":"25","pub_time":1483471800,"season_id":5809,"season_status":2,"title":"黑白来看守所 第二季","watching_count":2731},{"cover":"http://i0.hdslb.com/bfs/bangumi/2d91d23d676d7f739ad531d31ef7205d742fbfc8.jpg","favourites":"117198","is_finish":0,"is_started":1,"last_time":1490117700,"newest_ep_index":"11","pub_time":1484069700,"season_id":5796,"season_status":2,"title":"兽娘动物园","watching_count":1517},{"cover":"http://i0.hdslb.com/bfs/bangumi/948878ec7fc44c3e824d6204b4de91abfb0dce17.jpg","favourites":"789918","is_finish":0,"is_started":1,"last_time":1490115600,"newest_ep_index":"11","pub_time":1484067600,"season_id":5797,"season_status":2,"title":"Hand Shakers","watching_count":1295}]}
+     * result : {"ad":{"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/c711e42ae09f5edafb72591a744b9879c1e0c458.jpg","link":"http://www.bilibili.com/blackboard/activity-S1aPZanjx.html","pub_time":"2017-03-27 12:14:00","title":"4月新番"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/d9ac161c9be635340e18838836e0c6479f03b718.jpg","link":"http://bangumi.bilibili.com/anime/5788","pub_time":"2017-03-27 01:25:00","title":"小魔女学园"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/d3f1a286da362b803f6f32a1992ee1f0492d69fc.jpg","link":"http://bangumi.bilibili.com/anime/5789","pub_time":"2017-03-26 22:30:00","title":"热诚传说X"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/5b646d52b5e4556afeeca7b24be0bc3c6e443d14.jpg","link":"http://bangumi.bilibili.com/anime/5790","pub_time":"2017-03-26 22:30:00","title":"宇宙警探elDLIVE"}]},"previous":{"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1680758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1336188","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"788271","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016},"serializing":[{"cover":"http://i0.hdslb.com/bfs/bangumi/e7f7e5b07441da16e382ea4563f82f63f8632626.jpg","favourites":"63505","is_finish":0,"is_started":1,"last_time":1490610302,"newest_ep_index":"38","pub_time":1467627900,"season_id":5025,"season_status":2,"title":"智龙迷城X","watching_count":88},{"cover":"http://i0.hdslb.com/bfs/bangumi/7ce71b6800274f033f9cbb6303d19a6228997dc7.jpg","favourites":"30415","is_finish":0,"is_started":1,"last_time":1490583936,"newest_ep_index":"6","pub_time":1487260800,"season_id":5934,"season_status":2,"title":"寻找克洛托","watching_count":15},{"cover":"http://i0.hdslb.com/bfs/bangumi/553d0ba77ba810fb912837820f6f8fa27e494410.jpg","favourites":"177656","is_finish":1,"is_started":1,"last_time":1490558702,"newest_ep_index":"13","pub_time":1484503500,"season_id":5832,"season_status":2,"title":"暗芝居 第四季","watching_count":457},{"cover":"http://i0.hdslb.com/bfs/bangumi/1aa1cee348544dbd677e05cbeaa85c52c11e1a06.jpg","favourites":"183469","is_finish":0,"is_started":1,"last_time":1490549100,"newest_ep_index":"12","pub_time":1483891200,"season_id":5788,"season_status":2,"title":"小魔女学园 TV版","watching_count":2922},{"cover":"http://i0.hdslb.com/bfs/bangumi/94b8e40429614d34374da619f0fc433e7c91a278.jpg","favourites":"292667","is_finish":1,"is_started":1,"last_time":1490542202,"newest_ep_index":"12","pub_time":1483889400,"season_id":5786,"season_status":2,"title":"猫咪日常","watching_count":282},{"cover":"http://i0.hdslb.com/bfs/bangumi/35ed3ea03b7e06ac7c1a199029aaea925313ffdc.jpg","favourites":"129242","is_finish":1,"is_started":1,"last_time":1490540402,"newest_ep_index":"12","pub_time":1483887600,"season_id":5787,"season_status":2,"title":"偶像选举","watching_count":212}]}
      */
 
     private int code;
@@ -44,9 +44,9 @@ public class CartoonBean {
 
     public static class ResultBean {
         /**
-         * ad : {"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/102d534a0d843d16a476d67d5cbfc01d32b062a6.jpg","link":"http://bangumi.bilibili.com/anime/5795","pub_time":"2017-03-21 22:30:00","title":"ACCA","desc":"."},{"desc":".","id":0,"img":"http://i0.hdslb.com/bfs/bangumi/150986f04c4135793981c60e3c212655d9bed321.jpg","link":"http://bangumi.bilibili.com/anime/5809","pub_time":"2017-03-22 03:30:00","title":"黑白来看守所"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/87ce44fc1c2897c4b849f6ca1a0323877c6bbfb7.jpg","link":"http://bangumi.bilibili.com/anime/5796","pub_time":"2017-03-22 01:35:00","title":"兽娘动物园"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/1ab9b2aaf7c4c6c9b0d62dfb6330353223cb4e66.jpg","link":"http://bangumi.bilibili.com/anime/5797","pub_time":"2017-03-22 01:00:00","title":"hand shakers"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/32c2d7f952cede66b2c7083924b1c6130fd26530.jpg","link":"http://bangumi.bilibili.com/anime/1299","pub_time":"2017-03-20 15:17:00","title":"彩云国物语"}]}
-         * previous : {"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1673758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1331766","is_finish":0,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"786194","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016}
-         * serializing : [{"cover":"http://i0.hdslb.com/bfs/bangumi/4d06e660b8da9cb5335552f4ebde89bbcb2e9d4f.jpg","favourites":"1402598","is_finish":0,"is_started":1,"last_time":1490178302,"newest_ep_index":"49","pub_time":1459872000,"season_id":3462,"season_status":2,"title":"双星之阴阳师","watching_count":5896},{"cover":"http://i0.hdslb.com/bfs/bangumi/0e6bce5d018796dda7782aa5c97bfdd14691348a.jpg","favourites":"149350","is_finish":0,"is_started":1,"last_time":1490161452,"newest_ep_index":"蒯越篇","pub_time":1412006400,"season_id":2647,"season_status":2,"title":"口水三国","watching_count":670},{"cover":"http://i0.hdslb.com/bfs/bangumi/a910b6d56c06a1c4525ed1df30464fcf1dae0bf5.jpg","favourites":"244276","is_finish":0,"is_started":1,"last_time":1490155322,"newest_ep_index":"16","pub_time":1481083200,"season_id":5748,"season_status":2,"title":"画江湖之杯莫停","watching_count":1681},{"cover":"http://i0.hdslb.com/bfs/bangumi/0ab129325044ff4acbf808a3e38b71a1e0ea5b57.jpg","favourites":"478917","is_finish":0,"is_started":1,"last_time":1490124603,"newest_ep_index":"25","pub_time":1483471800,"season_id":5809,"season_status":2,"title":"黑白来看守所 第二季","watching_count":2731},{"cover":"http://i0.hdslb.com/bfs/bangumi/2d91d23d676d7f739ad531d31ef7205d742fbfc8.jpg","favourites":"117198","is_finish":0,"is_started":1,"last_time":1490117700,"newest_ep_index":"11","pub_time":1484069700,"season_id":5796,"season_status":2,"title":"兽娘动物园","watching_count":1517},{"cover":"http://i0.hdslb.com/bfs/bangumi/948878ec7fc44c3e824d6204b4de91abfb0dce17.jpg","favourites":"789918","is_finish":0,"is_started":1,"last_time":1490115600,"newest_ep_index":"11","pub_time":1484067600,"season_id":5797,"season_status":2,"title":"Hand Shakers","watching_count":1295}]
+         * ad : {"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/c711e42ae09f5edafb72591a744b9879c1e0c458.jpg","link":"http://www.bilibili.com/blackboard/activity-S1aPZanjx.html","pub_time":"2017-03-27 12:14:00","title":"4月新番"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/d9ac161c9be635340e18838836e0c6479f03b718.jpg","link":"http://bangumi.bilibili.com/anime/5788","pub_time":"2017-03-27 01:25:00","title":"小魔女学园"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/d3f1a286da362b803f6f32a1992ee1f0492d69fc.jpg","link":"http://bangumi.bilibili.com/anime/5789","pub_time":"2017-03-26 22:30:00","title":"热诚传说X"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/5b646d52b5e4556afeeca7b24be0bc3c6e443d14.jpg","link":"http://bangumi.bilibili.com/anime/5790","pub_time":"2017-03-26 22:30:00","title":"宇宙警探elDLIVE"}]}
+         * previous : {"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1680758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1336188","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"788271","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016}
+         * serializing : [{"cover":"http://i0.hdslb.com/bfs/bangumi/e7f7e5b07441da16e382ea4563f82f63f8632626.jpg","favourites":"63505","is_finish":0,"is_started":1,"last_time":1490610302,"newest_ep_index":"38","pub_time":1467627900,"season_id":5025,"season_status":2,"title":"智龙迷城X","watching_count":88},{"cover":"http://i0.hdslb.com/bfs/bangumi/7ce71b6800274f033f9cbb6303d19a6228997dc7.jpg","favourites":"30415","is_finish":0,"is_started":1,"last_time":1490583936,"newest_ep_index":"6","pub_time":1487260800,"season_id":5934,"season_status":2,"title":"寻找克洛托","watching_count":15},{"cover":"http://i0.hdslb.com/bfs/bangumi/553d0ba77ba810fb912837820f6f8fa27e494410.jpg","favourites":"177656","is_finish":1,"is_started":1,"last_time":1490558702,"newest_ep_index":"13","pub_time":1484503500,"season_id":5832,"season_status":2,"title":"暗芝居 第四季","watching_count":457},{"cover":"http://i0.hdslb.com/bfs/bangumi/1aa1cee348544dbd677e05cbeaa85c52c11e1a06.jpg","favourites":"183469","is_finish":0,"is_started":1,"last_time":1490549100,"newest_ep_index":"12","pub_time":1483891200,"season_id":5788,"season_status":2,"title":"小魔女学园 TV版","watching_count":2922},{"cover":"http://i0.hdslb.com/bfs/bangumi/94b8e40429614d34374da619f0fc433e7c91a278.jpg","favourites":"292667","is_finish":1,"is_started":1,"last_time":1490542202,"newest_ep_index":"12","pub_time":1483889400,"season_id":5786,"season_status":2,"title":"猫咪日常","watching_count":282},{"cover":"http://i0.hdslb.com/bfs/bangumi/35ed3ea03b7e06ac7c1a199029aaea925313ffdc.jpg","favourites":"129242","is_finish":1,"is_started":1,"last_time":1490540402,"newest_ep_index":"12","pub_time":1483887600,"season_id":5787,"season_status":2,"title":"偶像选举","watching_count":212}]
          */
 
         private AdBean ad;
@@ -100,11 +100,10 @@ public class CartoonBean {
             public static class HeadBean {
                 /**
                  * id : 0
-                 * img : http://i0.hdslb.com/bfs/bangumi/102d534a0d843d16a476d67d5cbfc01d32b062a6.jpg
-                 * link : http://bangumi.bilibili.com/anime/5795
-                 * pub_time : 2017-03-21 22:30:00
-                 * title : ACCA
-                 * desc : .
+                 * img : http://i0.hdslb.com/bfs/bangumi/c711e42ae09f5edafb72591a744b9879c1e0c458.jpg
+                 * link : http://www.bilibili.com/blackboard/activity-S1aPZanjx.html
+                 * pub_time : 2017-03-27 12:14:00
+                 * title : 4月新番
                  */
 
                 private int id;
@@ -112,7 +111,6 @@ public class CartoonBean {
                 private String link;
                 private String pub_time;
                 private String title;
-                private String desc;
 
                 public int getId() {
                     return id;
@@ -153,20 +151,12 @@ public class CartoonBean {
                 public void setTitle(String title) {
                     this.title = title;
                 }
-
-                public String getDesc() {
-                    return desc;
-                }
-
-                public void setDesc(String desc) {
-                    this.desc = desc;
-                }
             }
         }
 
         public static class PreviousBean {
             /**
-             * list : [{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1673758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1331766","is_finish":0,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"786194","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}]
+             * list : [{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1680758","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1336188","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"788271","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}]
              * season : 4
              * year : 2016
              */
@@ -202,7 +192,7 @@ public class CartoonBean {
             public static class ListBean {
                 /**
                  * cover : http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg
-                 * favourites : 1673758
+                 * favourites : 1680758
                  * is_finish : 1
                  * last_time : 1482262210
                  * newest_ep_index : 11
@@ -308,17 +298,17 @@ public class CartoonBean {
 
         public static class SerializingBean {
             /**
-             * cover : http://i0.hdslb.com/bfs/bangumi/4d06e660b8da9cb5335552f4ebde89bbcb2e9d4f.jpg
-             * favourites : 1402598
+             * cover : http://i0.hdslb.com/bfs/bangumi/e7f7e5b07441da16e382ea4563f82f63f8632626.jpg
+             * favourites : 63505
              * is_finish : 0
              * is_started : 1
-             * last_time : 1490178302
-             * newest_ep_index : 49
-             * pub_time : 1459872000
-             * season_id : 3462
+             * last_time : 1490610302
+             * newest_ep_index : 38
+             * pub_time : 1467627900
+             * season_id : 5025
              * season_status : 2
-             * title : 双星之阴阳师
-             * watching_count : 5896
+             * title : 智龙迷城X
+             * watching_count : 88
              */
 
             private String cover;

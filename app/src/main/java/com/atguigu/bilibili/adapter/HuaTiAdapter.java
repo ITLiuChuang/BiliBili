@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.activity.BannerActivity;
 import com.atguigu.bilibili.activity.HuaTiActivity;
-import com.atguigu.bilibili.bean.HuaTiBean;
+import com.atguigu.bilibili.bean.HuoDongBean;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -25,9 +25,14 @@ import butterknife.ButterKnife;
  */
 public class HuaTiAdapter extends BaseAdapter {
     private final HuaTiActivity mContext;
-    private final List<HuaTiBean.ListBean> datas;
 
-    public HuaTiAdapter(HuaTiActivity huaTiActivity, List<HuaTiBean.ListBean> list) {
+    private final List<HuoDongBean.ListBean> datas;
+
+
+
+
+
+    public HuaTiAdapter(HuaTiActivity huaTiActivity, List<HuoDongBean.ListBean> list) {
         this.mContext = huaTiActivity;
         this.datas = list;
     }
