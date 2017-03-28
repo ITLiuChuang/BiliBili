@@ -1,34 +1,56 @@
 package com.atguigu.bilibili.activity;
 
-import android.content.Intent;
-import android.os.Build;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.fragment.BaseFragment;
+import com.atguigu.bilibili.fragment.HomeFragment;
+import com.atguigu.bilibili.fragment.ShoppingCartFragment;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
-public class ShopActivity extends BaseActivity {
-
-
+public class CartActivity extends BaseActivity {
+    @Bind(R.id.fl_mian)
+    FrameLayout flMian;
+    @Bind(R.id.rb_home)
+    RadioButton rbHome;
+    @Bind(R.id.rb_cart)
+    RadioButton rbCart;
+    @Bind(R.id.rg_main)
+    RadioGroup rgMain;
+    @Bind(R.id.activity_cart)
+    LinearLayout activityCart;
     @Bind(R.id.iv_back)
     ImageView ivBack;
     @Bind(R.id.tv_name)
     TextView tvName;
     @Bind(R.id.toolBar)
     Toolbar toolBar;
-    @Bind(R.id.iv_img)
-    WebView ivImg;
-
+    /**
+     * 集合,装Fragment
+     */
+    private ArrayList<BaseFragment> fragments;
+    /**
+     * Fragment的下标
+     */
+    private int position;
+    /**
+     * 当前的Fragment
+     */
+    private Fragment tempFragment;
 
     @Override
     protected String setUrl() {
@@ -40,7 +62,7 @@ public class ShopActivity extends BaseActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+
             }
         });
         toolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -71,47 +93,44 @@ public class ShopActivity extends BaseActivity {
                     oks.setSiteUrl("http://sharesdk.cn");
 
                     // 启动分享GUI
-                    oks.show(ShopActivity.this);
+                    oks.show(CartActivity.this);
                 } else if (itemId == R.id.liulanqi) {
 
                 }
                 return true;
             }
         });
+        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rb_home:
+                        position = 0;
+                        break;
+
+                    case R.id.rb_cart:
+                        position = 1;
+                        break;
+                }
+                /**
+                 * 根据位置获取不同的Fragment
+                 */
+                Fragment currentFragment = fragments.get(position);
+                switchFragment(currentFragment);
+            }
+        });
+        //默然为首页
+        rgMain.check(R.id.rb_home);
     }
 
     @Override
     protected void initView() {
         toolBar.inflateMenu(R.menu.menu_share);
+        fragments = new ArrayList<>();
+        fragments.add(new HomeFragment());
+        fragments.add(new ShoppingCartFragment());
 
-        Intent intent = this.getIntent();
-        String img = intent.getStringExtra("img");
-        WebSettings settings = ivImg.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setBuiltInZoomControls(true);
-        settings.setUseWideViewPort(true);
-        ivImg.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
 
-            }
-
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    view.loadUrl(request.getUrl().toString());
-                }
-                return true;
-            }
-
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
-        ivImg.loadUrl(img);
     }
 
     @Override
@@ -121,8 +140,36 @@ public class ShopActivity extends BaseActivity {
 
     @Override
     protected int setLayoutId() {
-        return R.layout.activity_shop;
+        return R.layout.activity_cart;
+    }
 
+    private void switchFragment(Fragment currentFragment) {
+        //判断切换的页面是不是当前页面
+        if (tempFragment != currentFragment) {
+            //开启事物,得到Fragmentmagre
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            //判断是否添加过
+            if (!currentFragment.isAdded()) {
+                //隐藏缓存
+                if (tempFragment != null) {
+                    ft.hide(tempFragment);
+                }
+
+                //添加
+                ft.add(R.id.fl_mian, currentFragment);
+            } else {
+                //隐藏缓存
+                if (tempFragment != null) {
+                    ft.hide(tempFragment);
+                }
+                //显示
+                ft.show(currentFragment);
+            }
+            //提交事物
+            ft.commit();
+            //把当前的赋值为缓存的
+            tempFragment = currentFragment;
+        }
     }
 
 

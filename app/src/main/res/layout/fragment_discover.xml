@@ -211,8 +211,12 @@
                     android:textColor="@color/black_80"
                     android:textSize="16sp" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#66000000" />
             <TextView
-                android:id="@+id/tv_caart"
+                android:id="@+id/tv_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_btn_rank_all"

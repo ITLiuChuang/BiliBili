@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.activity.CartActivity;
 import com.atguigu.bilibili.activity.HuaTiActivity;
 import com.atguigu.bilibili.activity.SearchActivity;
 import com.atguigu.bilibili.activity.ShopActivity;
@@ -64,6 +65,8 @@ public class DiscoverFragment extends BaseFragment {
     TextView tvXingququan;
     @Bind(R.id.ll_shop)
     LinearLayout llShop;
+    @Bind(R.id.tv_cart)
+    TextView tvCart;
     private Discoverbean discoverbean;
     private String[] datas;
 
@@ -189,7 +192,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
 
-    @OnClick({tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu, R.id.ll_shop})
+    @OnClick({tv_xingququan, R.id.tv_huatizhongxin, R.id.tv_huodongzhongxin, R.id.tv_yuanchuang, R.id.tv_quanqu, R.id.ll_shop, R.id.tv_cart})
     public void onClick(View view) {
         switch (view.getId()) {
             case tv_xingququan:
@@ -213,7 +216,11 @@ public class DiscoverFragment extends BaseFragment {
                 break;
             case R.id.ll_shop:
                 intent = new Intent(mContext, ShopActivity.class);
-                intent.putExtra("img","http://bmall.bilibili.com" );
+                intent.putExtra("img", "http://bmall.bilibili.com");
+                startActivity(intent);
+                break;
+            case R.id.tv_cart:
+                intent = new Intent(mContext, CartActivity.class);
                 startActivity(intent);
                 break;
         }
