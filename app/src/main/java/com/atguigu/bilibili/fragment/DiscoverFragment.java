@@ -213,7 +213,7 @@ public class DiscoverFragment extends BaseFragment {
                 break;
             case R.id.ll_shop:
                 intent = new Intent(mContext, ShopActivity.class);
-                intent.putExtra("img","http://bmall.bilibili.com/#!/" );
+                intent.putExtra("img","http://bmall.bilibili.com" );
                 startActivity(intent);
                 break;
         }

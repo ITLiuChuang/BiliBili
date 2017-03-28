@@ -25,18 +25,21 @@ public class MultipleAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     @Bind(R.id.gv_hot)
     MyGridView gvHot;
     private final LayoutInflater inflater;
+    private int num = 1;
 
 
     public MultipleAdapter(Context mContext, List<ComprehensiveBean.DataBean> data) {
         this.mContext = mContext;
         this.datas = data;
         inflater = LayoutInflater.from(mContext);
+
     }
+
 
 
     @Override
     public LiveBaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MultipleViewHodler(View.inflate(mContext, R.layout.item_recommend_multiple, null));
+        return new MultipleViewHodler(View.inflate(mContext, R.layout.item_recommend_multipl, null));
     }
 
     @Override
@@ -44,14 +47,23 @@ public class MultipleAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
         holder.setData();
     }
 
-    @Override
+
     public int getItemCount() {
-        return 1;
+        return num;
     }
 
-     class MultipleViewHodler extends LiveBaseViewHolder {
+    public void AddFooterItem(List<ComprehensiveBean.DataBean> footerDatas) {
+        datas.addAll(footerDatas);
+        num ++ ;
+        notifyDataSetChanged();
+    }
+
+
+    class MultipleViewHodler extends LiveBaseViewHolder {
         @Bind(R.id.gv_hot)
         MyGridView gvHot;
+        private SyntheticalAdapter syntheticalAdapter;
+
         public MultipleViewHodler(View inflate) {
             super(inflate);
             ButterKnife.bind(this,inflate);
@@ -59,7 +71,9 @@ public class MultipleAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         @Override
         public void setData() {
-            gvHot.setAdapter(new SyntheticalAdapter(mContext,datas));
+            syntheticalAdapter = new SyntheticalAdapter(mContext, datas);
+            gvHot.setAdapter(syntheticalAdapter);
         }
     }
+
 }

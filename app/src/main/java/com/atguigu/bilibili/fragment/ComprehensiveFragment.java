@@ -1,6 +1,7 @@
 package com.atguigu.bilibili.fragment;
 
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,8 @@ import com.atguigu.bilibili.bean.ComprehensiveBean;
 import com.atguigu.bilibili.utils.AppNetConfig;
 import com.atguigu.bilibili.utils.NetUtils;
 
+import java.util.List;
+
 import butterknife.Bind;
 
 /**
@@ -26,10 +29,58 @@ public class ComprehensiveFragment extends BaseFragment {
     RecyclerView recyclerview;
     @Bind(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
-
+    private List<ComprehensiveBean.DataBean> data;
+    private MultipleAdapter multipleAdapter;
 
     @Override
     protected void initListener() {
+
+
+        //下拉刷新
+        initPullRefresh();
+        //上拉加载
+        initLoadMoreListener();
+
+    }
+
+
+    private void initLoadMoreListener() {
+        recyclerview.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            int lastVisibleItem;
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                Log.e("TAG", "lastVisibleItem" + (lastVisibleItem + 1));
+                Log.e("TAG", "multipleAdapter" + multipleAdapter.getItemCount());
+                //判断RecyclerView的状态 是空闲时，同时，是最后一个可见的ITEM时才加载
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && (lastVisibleItem + 1) == multipleAdapter.getItemCount()) {
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            multipleAdapter.AddFooterItem(data);
+                            Toast.makeText(mContext, "更新了 条目数据", Toast.LENGTH_SHORT).show();
+                        }
+                    }, 3000);
+                }
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                //最后一个可见的ITEM
+                lastVisibleItem = layoutManager.findLastVisibleItemPosition();
+            }
+        });
+
+    }
+
+    private void initPullRefresh() {
         //设置下拉多少距离起作用
         swipeRefreshLayout.setDistanceToTriggerSync(100);//设置下拉距离
         swipeRefreshLayout.setColorSchemeColors(Color.BLUE, Color.BLACK, Color.RED, Color.GREEN);
@@ -40,7 +91,6 @@ public class ComprehensiveFragment extends BaseFragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(mContext, "wedsjkmd,fb", Toast.LENGTH_SHORT).show();
                 if (!TextUtils.isEmpty(setUrl())) {
                     NetUtils.getInstance().okhttpUtilsget(setUrl(), new NetUtils.resultJson() {
                         @Override
@@ -56,11 +106,10 @@ public class ComprehensiveFragment extends BaseFragment {
                 } else {
                     initData(null);
                 }
-
-
             }
         });
     }
+
 
     @Override
     protected int setLayoutId() {
@@ -82,7 +131,11 @@ public class ComprehensiveFragment extends BaseFragment {
             if (code == 0) {
 
                 ComprehensiveBean comprehensiveBean = JSON.parseObject(json, ComprehensiveBean.class);
-                recyclerview.setAdapter(new MultipleAdapter(mContext, comprehensiveBean.getData()));
+
+                data = comprehensiveBean.getData();
+                multipleAdapter = new MultipleAdapter(mContext, data);
+                recyclerview.setAdapter(multipleAdapter);
+//                recyclerview.setLayoutManager(new GridLayoutManager(mContext, 3));
                 recyclerview.setLayoutManager(new LinearLayoutManager(mContext));
                 swipeRefreshLayout.setRefreshing(false);
             } else {
@@ -90,6 +143,4 @@ public class ComprehensiveFragment extends BaseFragment {
             }
         }
     }
-
-
 }

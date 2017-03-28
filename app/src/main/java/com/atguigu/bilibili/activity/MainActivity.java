@@ -60,9 +60,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initListener() {
-
-
-
         notificationMainColumn.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
