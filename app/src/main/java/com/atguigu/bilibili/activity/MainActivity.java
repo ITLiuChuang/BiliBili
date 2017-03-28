@@ -114,10 +114,8 @@ public class MainActivity extends BaseActivity {
                     showToast("下载");
                 } else if (menuItemId == R.id.menu_search) {
                     showToast("搜索");
-
                 } else if (menuItemId == R.id.menu_game) {
                     showToast("游戏");
-
                 }
                 return true;
             }

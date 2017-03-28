@@ -32,8 +32,10 @@ public abstract class BaseFragment extends Fragment {
         View view = View.inflate(mContext, setLayoutId(), null);
         ButterKnife.bind(this, view);
         initListener();
+
         return view;
     }
+
 
     protected abstract void initListener();
 
