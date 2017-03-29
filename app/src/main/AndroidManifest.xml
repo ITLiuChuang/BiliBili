@@ -38,6 +38,7 @@
         <activity android:name=".activity.HuaTiActivity" />
         <activity android:name=".activity.YuanChuangActivity" />
         <activity android:name=".activity.SearchActivity" />
+
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -80,9 +81,19 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".activity.ShopActivity" />
         <activity android:name=".activity.DirectSeedingActivity" />
-        <activity android:name=".activity.CartActivity" />
+        <activity
+            android:name=".activity.CartActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".activity.CartDetailsActivity" />
         <activity android:name=".activity.OutActivity"></activity>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>
