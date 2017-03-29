@@ -35,4 +35,11 @@
         <attr name="border_overlay" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="AddSubView">
+        <attr name="value" format="integer|reference" />
+        <attr name="minValue" format="integer|reference" />
+        <attr name="maxValue" format="integer|reference" />
+        <attr name="numberAddBackground" format="reference" />
+        <attr name="numberSubBackground" format="reference" />
+    </declare-styleable>
 </resources>

@@ -4,9 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/lv_cart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="2"></android.support.v7.widget.RecyclerView>
+   <com.atguigu.bilibili.view.MyGridView
+       android:id="@+id/gv_home"
+       android:numColumns="2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></com.atguigu.bilibili.view.MyGridView>
+
+
 </LinearLayout>

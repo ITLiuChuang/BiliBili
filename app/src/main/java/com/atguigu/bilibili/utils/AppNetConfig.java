@@ -50,4 +50,8 @@ public class AppNetConfig {
      * 原创排行榜
      */
     public static final String YUANCHUANG_TAG = "http://app.bilibili.com/x/v2/rank?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&order=all&platform=android&pn=1&ps=20&ts=1490015891000&sign=8e7dfaa1c2fb779943430b46e734b422";
+    /**
+     * 购物车商品
+     */
+    public static final String CART_TAG = "http://bmall.bilibili.com/api/product/list.do?pn=1&ps=6";
 }

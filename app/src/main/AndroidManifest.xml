@@ -80,7 +80,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".activity.ShopActivity" />
         <activity android:name=".activity.DirectSeedingActivity" />
-        <activity android:name=".activity.CartActivity"></activity>
+        <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.CartDetailsActivity" />
+        <activity android:name=".activity.OutActivity"></activity>
     </application>
 
 </manifest>

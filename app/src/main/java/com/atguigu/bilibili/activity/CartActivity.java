@@ -33,12 +33,12 @@ public class CartActivity extends BaseActivity {
     RadioGroup rgMain;
     @Bind(R.id.activity_cart)
     LinearLayout activityCart;
-    @Bind(R.id.iv_back)
-    ImageView ivBack;
     @Bind(R.id.tv_name)
     TextView tvName;
     @Bind(R.id.toolBar)
     Toolbar toolBar;
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
     /**
      * 集合,装Fragment
      */
@@ -62,7 +62,7 @@ public class CartActivity extends BaseActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                finish();
             }
         });
         toolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -119,8 +119,11 @@ public class CartActivity extends BaseActivity {
                 switchFragment(currentFragment);
             }
         });
+
+
         //默然为首页
         rgMain.check(R.id.rb_home);
+
     }
 
     @Override
@@ -171,6 +174,5 @@ public class CartActivity extends BaseActivity {
             tempFragment = currentFragment;
         }
     }
-
 
 }
