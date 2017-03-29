@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 
 import com.atguigu.bilibili.R;
 import com.atguigu.bilibili.adapter.ComprehensiveAdapter;
+import com.atguigu.bilibili.adapter.ComprehensiveFragment;
 
 import java.util.ArrayList;
 
