@@ -72,8 +72,9 @@ dependencies {
     compile 'org.greenrobot:greendao-generator:3.0.0'
 
     compile 'com.shuyu:GSYVideoPlayer:1.6.1'
-
     compile 'com.github.ctiao:DanmakuFlameMaster:0.7.3'
     compile 'com.github.ctiao:ndkbitmap-armv7a:0.7.3'
     compile 'com.github.ctiao:dfm:0.7.3'
+
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
 }

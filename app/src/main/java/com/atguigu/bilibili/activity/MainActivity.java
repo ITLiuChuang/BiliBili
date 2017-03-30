@@ -1,5 +1,6 @@
 package com.atguigu.bilibili.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -108,7 +109,7 @@ public class MainActivity extends BaseActivity {
                 int menuItemId = item.getItemId();
 
                 if (menuItemId == R.id.menu_download) {
-                    showToast("下载");
+                    startActivity(new Intent(MainActivity.this,DownloadListActivity.class));
                 } else if (menuItemId == R.id.menu_search) {
                     showToast("搜索");
                 } else if (menuItemId == R.id.menu_game) {
