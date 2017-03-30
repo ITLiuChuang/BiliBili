@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
-import com.atguigu.bilibili.bean.GoodsBean;
+import com.atguigu.bilibili.User;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -21,9 +21,11 @@ import butterknife.ButterKnife;
  */
 public class OutAdapter extends BaseAdapter {
     private final Context mContext;
-    private final List<GoodsBean> listData;
+    private final List<User> listData;
+    private User user;
 
-    public OutAdapter(Context mContext, List<GoodsBean> listData) {
+
+    public OutAdapter(Context mContext, List<User> listData) {
         this.mContext = mContext;
         this.listData = listData;
     }
@@ -54,10 +56,10 @@ public class OutAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        GoodsBean goodsBean = listData.get(position);
-        Glide.with(mContext).load(goodsBean.getImgUrl()).into(viewHolder.ivGov);
-        viewHolder.tvDescGov.setText(goodsBean.getTitle());
-        viewHolder.tvPriceGov.setText("￥" + goodsBean.getSalvePrice());
+        user = listData.get(position);
+        Glide.with(mContext).load(user.getImageUrl()).into(viewHolder.ivGov);
+        viewHolder.tvDescGov.setText(user.getDetails());
+        viewHolder.tvPriceGov.setText("￥" + user.getNumber());
         return convertView;
     }
 

@@ -11,12 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.atguigu.bilibili.MyApplication;
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.User;
+import com.atguigu.bilibili.UserDao;
 import com.atguigu.bilibili.activity.CartActivity;
 import com.atguigu.bilibili.activity.OutActivity;
 import com.atguigu.bilibili.adapter.ShoppingCartAdapter;
-import com.atguigu.bilibili.bean.GoodsBean;
-import com.atguigu.bilibili.utils.CartStorage;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ import butterknife.OnClick;
 /**
  * Created by 刘闯 on 2017/3/28.
  */
-public class  ShoppingCartFragment extends BaseFragment {
+public class ShoppingCartFragment extends BaseFragment {
 
     //编辑状态
     public static final int ACTION_EDIT = 1;
@@ -56,12 +57,14 @@ public class  ShoppingCartFragment extends BaseFragment {
     TextView tvEmptyCartTobuy;
     @Bind(R.id.ll_empty_shopcart)
     LinearLayout llEmptyShopcart;
-    private List<GoodsBean> list;
     private ShoppingCartAdapter adapter;
     private boolean isChecked;
+    private UserDao userDao;
+    private List<User> list;
 
     @Override
     protected void initListener() {
+        userDao = MyApplication.getInstances().getDaoSession().getUserDao();
         showData();
     }
 
@@ -100,11 +103,14 @@ public class  ShoppingCartFragment extends BaseFragment {
     }
 
     private void showData() {
-        list = CartStorage.getInstance(mContext).getAllData();
-        if (list != null && list.size() > 0) {
+
+
+//        list = CartStorage.getInstance(mContext).getAllData();
+       list = userDao.loadAll();
+        if (this.list != null && this.list.size() > 0) {
             //有数据
             llEmptyShopcart.setVisibility(View.GONE);
-            adapter = new ShoppingCartAdapter(mContext, list, tvShopcartTotal, checkboxAll, checkboxDeleteAll);
+            adapter = new ShoppingCartAdapter(mContext, this.list, tvShopcartTotal, checkboxAll, checkboxDeleteAll);
             //设置适配器
             recyclerview.setAdapter(adapter);
             //设置管理器
@@ -114,8 +120,8 @@ public class  ShoppingCartFragment extends BaseFragment {
                 @Override
                 public void onItemClickListener(View view, int position) {
                     //设置Bean对象取反
-                    GoodsBean goodsBean = list.get(position);
-                    goodsBean.setChecked(!goodsBean.isChecked());
+                    User user = list.get(position);
+                    user.setIsChecked(!user.getIsChecked());
                     adapter.notifyItemChanged(position);
                     //刷新价格
                     adapter.showTotalPrice();
@@ -200,6 +206,13 @@ public class  ShoppingCartFragment extends BaseFragment {
                 adapter.showTotalPrice();
                 break;
             case R.id.btn_delete:
+                list = userDao.loadAll();
+                for (int i = 0; i <list.size() ; i++) {
+                    if(list.get(i).getIsChecked()) {
+                        userDao.delete(list.get(i));
+                    }
+                }
+                showData();
                 adapter.deleteData();
                 adapter.checkAll();
                 showEempty();

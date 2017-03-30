@@ -16,16 +16,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.atguigu.bilibili.MyApplication;
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.User;
+import com.atguigu.bilibili.UserDao;
 import com.atguigu.bilibili.adapter.OutAdapter;
 import com.atguigu.bilibili.bean.AddressBean;
-import com.atguigu.bilibili.bean.GoodsBean;
-import com.atguigu.bilibili.utils.CartStorage;
 import com.atguigu.bilibili.utils.PayResult;
 import com.atguigu.bilibili.utils.SignUtils;
 import com.atguigu.bilibili.utils.pay.PayKeys;
 import com.atguigu.bilibili.view.NoScrollListView;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -71,8 +71,12 @@ public class OutActivity extends AppCompatActivity {
     @Bind(R.id.checkOutListView)
     NoScrollListView checkOutListView;
     private ArrayList<AddressBean> addressList;
-    private List<GoodsBean> listData;
+
     private OutAdapter adapter;
+
+    private List<User> listData;
+    private UserDao userDao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,10 +104,10 @@ public class OutActivity extends AppCompatActivity {
         if (listData != null && listData.size() > 0) {
             for (int i = 0; i < listData.size(); i++) {
 
-                GoodsBean goodsBean = listData.get(i);
-                if (goodsBean.isChecked()) {
+                User user = listData.get(i);
+                if (user.getIsChecked()) {
                     //被选中的
-                    totalPrice = totalPrice + goodsBean.getNumber() * Double.parseDouble(goodsBean.getSalvePrice() + "");
+                    totalPrice = totalPrice + user.getNumber() * Double.parseDouble(user.getMoney() + "");
                 }
             }
         }
@@ -113,8 +117,9 @@ public class OutActivity extends AppCompatActivity {
 
     private void setData() {
         rgPaymode.check(R.id.alipay);
-        listData = CartStorage.getInstance(this).getAllData();
-
+//        listData = CartStorage.getInstance(this).getAllData();
+        UserDao userDao = MyApplication.getInstances().getDaoSession().getUserDao();
+        listData = this.userDao.loadAll();
         if (listData != null && listData.size() > 0) {
             adapter = new OutAdapter(this, listData);
             checkOutListView.setAdapter(adapter);
@@ -241,9 +246,9 @@ public class OutActivity extends AppCompatActivity {
             }
         }
     };
+
     /**
      * call alipay sdk pay. 调用SDK支付
-     *
      */
     public void pay() {
         // 订单

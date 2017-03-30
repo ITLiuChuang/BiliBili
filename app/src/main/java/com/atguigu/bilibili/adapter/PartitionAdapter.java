@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.atguigu.bilibili.R;
-import com.atguigu.bilibili.activity.DirectSeedingActivity;
+import com.atguigu.bilibili.activity.DanmkuVideoActivity;
 import com.atguigu.bilibili.bean.LiveBean;
 import com.bumptech.glide.Glide;
 
@@ -47,7 +47,7 @@ public class PartitionAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
             convertView = View.inflate(mContext, R.layout.item_partition, null);
@@ -59,13 +59,14 @@ public class PartitionAdapter extends BaseAdapter {
         LiveBean.DataBean.PartitionsBean.LivesBean livesBean = datas.get(position);
         viewHolder.tvTitle.setText(livesBean.getTitle());
         viewHolder.tvName.setText(livesBean.getOwner().getName());
-        viewHolder.tvFollow.setText(livesBean.getOnline()+"");
+        viewHolder.tvFollow.setText(livesBean.getOnline() + "");
         Glide.with(mContext).load(livesBean.getCover().getSrc()).into(viewHolder.ivHot);
-        
+
         viewHolder.itemLiveLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, DirectSeedingActivity.class);
+                Intent intent = new Intent(mContext, DanmkuVideoActivity.class);
+                intent.putExtra("video",datas.get(position).getPlayurl());
                 mContext.startActivity(intent);
             }
         });

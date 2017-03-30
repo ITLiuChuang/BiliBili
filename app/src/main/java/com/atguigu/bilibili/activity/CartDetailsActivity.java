@@ -15,10 +15,12 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.atguigu.bilibili.MyApplication;
 import com.atguigu.bilibili.R;
+import com.atguigu.bilibili.User;
+import com.atguigu.bilibili.UserDao;
 import com.atguigu.bilibili.adapter.CartAdapter;
 import com.atguigu.bilibili.bean.GoodsBean;
-import com.atguigu.bilibili.utils.CartStorage;
 import com.atguigu.bilibili.utils.VirtualkeyboardHeight;
 import com.atguigu.bilibili.view.AddSubView;
 import com.bumptech.glide.Glide;
@@ -58,8 +60,9 @@ public class CartDetailsActivity extends BaseActivity {
     LinearLayout activityCartDetails;
     private ArrayList<Parcelable> data;
 
-    private GoodsBean tempGoodsBean;
+
     private GoodsBean goodsBean;
+    private UserDao userDao;
 
 
     @Override
@@ -73,6 +76,7 @@ public class CartDetailsActivity extends BaseActivity {
     }
 
     private void getData() {
+        userDao = MyApplication.getInstances().getDaoSession().getUserDao();
         goodsBean = (GoodsBean) getIntent().getSerializableExtra(CartAdapter.GOODS_BEAN);
 
         //设置图片
@@ -121,13 +125,13 @@ public class CartDetailsActivity extends BaseActivity {
 
     private void showPopwindow() {
 
-        tempGoodsBean = CartStorage.getInstance(this).findDete(goodsBean.getSkuId());
-        if (tempGoodsBean == null) {
-            isExist = false;
-            tempGoodsBean = goodsBean;
-        } else {
-            isExist = true;
-        }
+//        tempGoodsBean = CartStorage.getInstance(this).findDete(goodsBean.getSkuId());
+//        if (tempGoodsBean == null) {
+//            isExist = false;
+//            tempGoodsBean = goodsBean;
+//        } else {
+//            isExist = true;
+//        }
         // 1 利用layoutInflater获得View
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.popupwindow_add_product, null);
@@ -158,27 +162,27 @@ public class CartDetailsActivity extends BaseActivity {
         Glide.with(CartDetailsActivity.this).load(goodsBean.getImgUrl()).into(iv_goodinfo_photo);
 
         // 名称
-        tv_goodinfo_name.setText(tempGoodsBean.getTitle());
+        tv_goodinfo_name.setText(goodsBean.getTitle());
         // 显示价格
-        tv_goodinfo_price.setText(tempGoodsBean.getSalvePrice() + "");
+        tv_goodinfo_price.setText(goodsBean.getSalvePrice() + "");
 
         // 设置最大值和当前值
         nas_goodinfo_num.setMaxValue(100);//库存100
         nas_goodinfo_num.setValue(1);
 
-        nas_goodinfo_num.setValue(tempGoodsBean.getNumber());
+        nas_goodinfo_num.setValue(goodsBean.getNumber());
         nas_goodinfo_num.setOnNumberChangerListener(new AddSubView.OnNumberChangerListener() {
             @Override
             public void OnNumberChanger(int value) {
-                tempGoodsBean.setNumber(value);
+                goodsBean.setNumber(value);
             }
         });
         bt_goodinfo_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 window.dismiss();
-                if (isExist && tempGoodsBean.getNumber() == 1) {
-                    tempGoodsBean.setNumber(tempGoodsBean.getNumber() + 1);
+                if (isExist && goodsBean.getNumber() == 1) {
+                    goodsBean.setNumber(goodsBean.getNumber() + 1);
                 }
             }
         });
@@ -187,7 +191,8 @@ public class CartDetailsActivity extends BaseActivity {
             public void onClick(View v) {
                 window.dismiss();
                 //添加购物车
-                CartStorage.getInstance(CartDetailsActivity.this).updataData(tempGoodsBean);
+                User shopInfo = new User(null, goodsBean.getImgUrl(), goodsBean.getTitle(), goodsBean.getSalvePrice(), goodsBean.getNumber(), true);
+                userDao.insert(shopInfo);
                 Toast.makeText(CartDetailsActivity.this, "添加购物车成功", Toast.LENGTH_SHORT).show();
             }
         });

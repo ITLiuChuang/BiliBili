@@ -1,11 +1,25 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'org.greenrobot.greendao'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.0.0'
+    }
+}
+greendao {
+    schemaVersion 1
+    daoPackage 'com.atguigu.bilibili'
+    targetGenDir 'src/main/java'
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.atguigu.bilibili"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -53,4 +67,13 @@ dependencies {
     compile files('libs/alipayutdid.jar')
     compile files('libs/jpush-android_v3.0.3.jar')
     compile files('libs/jcore-android_v1.1.1.jar')
+
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+
+    compile 'com.shuyu:GSYVideoPlayer:1.6.1'
+
+    compile 'com.github.ctiao:DanmakuFlameMaster:0.7.3'
+    compile 'com.github.ctiao:ndkbitmap-armv7a:0.7.3'
+    compile 'com.github.ctiao:dfm:0.7.3'
 }
