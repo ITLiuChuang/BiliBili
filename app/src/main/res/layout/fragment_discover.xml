@@ -79,7 +79,6 @@
                 android:id="@+id/ivest_hot_f2"
                 android:layout_width="fill_parent"
                 android:layout_height="100dp"
-                android:padding="20dp"
                 atguigu:max_select="-1"></com.zhy.view.flowlayout.TagFlowLayout>
 
             <TextView

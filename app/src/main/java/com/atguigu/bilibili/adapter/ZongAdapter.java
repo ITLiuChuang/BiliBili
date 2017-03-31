@@ -72,7 +72,7 @@ public class ZongAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         @Override
         public void setData() {
-            if (datas.getItems().getSeason().size() != 0) {
+            if (datas.getItems().getSeason()!= null) {
 
                 gvHot.setAdapter(new SeasonAdapter(mContext, datas.getItems().getSeason()));
             }

@@ -77,4 +77,8 @@ dependencies {
     compile 'com.github.ctiao:dfm:0.7.3'
 
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    /**
+     * 二维码扫描
+     */
+    compile 'cn.yipianfengye.android:zxing-library:2.1'
 }

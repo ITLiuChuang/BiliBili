@@ -82,7 +82,9 @@ public class BannerActivity extends BaseActivity {
                     // 启动分享GUI
                     oks.show(BannerActivity.this);
                 } else if (itemId == R.id.liulanqi) {
-
+                   Intent intent = new Intent(BannerActivity.this, ZXingActivity.class);
+                    intent.putExtra("image",getIntent().getStringExtra("img"));
+                    startActivity(intent);
                 }
                 return true;
             }

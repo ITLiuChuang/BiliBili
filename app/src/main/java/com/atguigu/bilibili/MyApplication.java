@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+
 import cn.jpush.android.api.JPushInterface;
 
 
@@ -23,6 +25,9 @@ public class MyApplication extends Application {
         setDatabase();
         JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
         JPushInterface.init(this);            // 初始化 JPush
+
+        //二维码扫描
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
     public static MyApplication getInstances() {
@@ -55,4 +60,6 @@ public class MyApplication extends Application {
     public static Context getInstance() {
         return mContext;
     }
+
+
 }
