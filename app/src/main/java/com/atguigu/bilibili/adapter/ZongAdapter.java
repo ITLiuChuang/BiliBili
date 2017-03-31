@@ -41,7 +41,7 @@ public class ZongAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     public LiveBaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == SEASON) {
 
-                return new SeasonViewHolder(View.inflate(mContext, R.layout.item_season, null));
+            return new SeasonViewHolder(View.inflate(mContext, R.layout.item_season, null));
 
         } else if (viewType == ARCHIVE) {
             return new ArchiveViewHolder(View.inflate(mContext, R.layout.item_archive, null));
@@ -72,11 +72,14 @@ public class ZongAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         @Override
         public void setData() {
-            gvHot.setAdapter(new SeasonAdapter(mContext, datas.getItems().getSeason()));
+            if (datas.getItems().getSeason().size() != 0) {
+
+                gvHot.setAdapter(new SeasonAdapter(mContext, datas.getItems().getSeason()));
+            }
         }
     }
 
-     class ArchiveViewHolder extends LiveBaseViewHolder {
+    class ArchiveViewHolder extends LiveBaseViewHolder {
         @Bind(R.id.gv_home)
         MyGridView gvHome;
 
@@ -87,7 +90,7 @@ public class ZongAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
 
         @Override
         public void setData() {
-            gvHome.setAdapter(new ArchiveAdapter(mContext,datas.getItems().getArchive()));
+            gvHome.setAdapter(new ArchiveAdapter(mContext, datas.getItems().getArchive()));
         }
     }
 }
