@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atguigu.bilibili">
+
     <!-- 二维码 -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -94,7 +95,7 @@
         <activity android:name=".activity.YuanChuangActivity" />
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".activity.DanmkuVideoActivity" />
-        <activity android:name=".activity.ZXingActivity"/>
+        <activity android:name=".activity.ZXingActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -162,7 +163,7 @@
         <activity
             android:name="cn.jpush.android.ui.PopWinActivity"
             android:exported="false"
-            android:theme="@style/MyDialogStyle"></activity>
+            android:theme="@style/MyDialogStyle" />
 
         <!-- Required SDK核心功能 -->
         <activity
@@ -181,7 +182,7 @@
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <!-- Required SDK 核心功能 -->
         <!-- 可配置android:process参数将PushService放在其他进程中 -->
@@ -258,7 +259,8 @@
             android:name="JPUSH_APPKEY"
             android:value="b824dd7717d4c5b3b39e6d91" />
 
-        <activity android:name=".activity.DownloadListActivity"></activity>
+        <activity android:name=".activity.DownloadListActivity" />
+        <activity android:name=".activity.BluetoothActivity"></activity>
     </application>
 
 </manifest>

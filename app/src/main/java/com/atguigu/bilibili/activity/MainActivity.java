@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity {
                 } else if (menuItemId == R.id.menu_search) {
                     showToast("搜索");
                 } else if (menuItemId == R.id.menu_game) {
-                    showToast("游戏");
+                    startActivity(BluetoothActivity.class);
                 }
                 return true;
             }

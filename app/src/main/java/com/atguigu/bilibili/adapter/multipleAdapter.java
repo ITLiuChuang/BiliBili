@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 /**
  * Created by 刘闯 on 2017/3/29.
  */
-public class MultipleAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
+class MultipleAdapter extends RecyclerView.Adapter<LiveBaseViewHolder> {
     private final Context mContext;
     private final List<ComprehensiveBean.DataBean> datas;
 
